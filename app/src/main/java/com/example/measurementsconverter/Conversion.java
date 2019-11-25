@@ -15,13 +15,26 @@ public enum Conversion {
     STORAGE(R.string.storage,Collections.emptyList()),
     ENERGY(R.string.energy,Collections.emptyList()),
     FUEL(R.string.fuel,Collections.emptyList()),
-    LENGTH(R.string.length,Collections.emptyList())
-    ;
+    LENGTH(R.string.length,Collections.emptyList());
 
 
     public int mLabelRes;
+    private List<Unit> arrayOfUnits;
+
 
     Conversion(int i, List<Unit> conversion) {
         mLabelRes = i;
+        arrayOfUnits = conversion;
     }
+
+    public List<Unit> getmLabelRes(int i){
+        //НУЖНО ВЕРНУТЬ ЛИСТ
+        if (i ==
+        return Conversion.arrayOfUnits;
+    }
+
+    public List getArrayOfUnits() {
+        return arrayOfUnits;
+    }
+
 }

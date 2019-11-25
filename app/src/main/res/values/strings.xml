@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MeasurementsConverter</string>
+    <string name="app_name">Measurements Converter</string>
     <string name="square">Площадь</string>
     <string name="cooking">Готовка</string>
     <string name="currency">Валюта</string>
@@ -10,4 +10,6 @@
     <string name="sq_kilimetres">Кв. километр</string>
     <string name="sq_metres">Кв. метр</string>
     <string name="sq_santimetres">Кв. сантиметр</string>
+    <string name="from">Из</string>
+    <string name="to">В</string>
 </resources>

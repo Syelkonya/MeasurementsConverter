@@ -7,10 +7,15 @@
     android:padding="@dimen/padding_medium">
 
     <TextView
+        android:layout_marginTop="@dimen/min_margin"
         android:id="@+id/text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@color/colorPrimaryDark"
-        android:textSize="24dp"
+        android:textSize="24sp"
         tools:text ="HALO"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
 </LinearLayout>
