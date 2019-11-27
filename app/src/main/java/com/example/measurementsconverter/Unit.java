@@ -6,6 +6,7 @@ public enum Unit {
     SQ_SENTIMETRES(R.string.sq_santimetres, 0.00_01, 10_000);
 
 
+
     public int mLabelResources;
     public double mConversionToBase;
     public double mConversionFromBase;
@@ -14,5 +15,10 @@ public enum Unit {
         mLabelResources = labelResources;
         mConversionToBase = conversionToBase;
         mConversionFromBase = conversionFromBase;
+    }
+
+
+    public int getmLabelResources() {
+        return mLabelResources;
     }
 }

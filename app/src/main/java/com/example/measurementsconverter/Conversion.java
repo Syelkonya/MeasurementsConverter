@@ -27,13 +27,11 @@ public enum Conversion {
         arrayOfUnits = conversion;
     }
 
-    public List<Unit> getmLabelRes(int i){
-        //НУЖНО ВЕРНУТЬ ЛИСТ
-        if (i ==
-        return Conversion.arrayOfUnits;
+    public int getmLabelRes(){
+        return mLabelRes;
     }
 
-    public List getArrayOfUnits() {
+    public List<Unit> getArrayOfUnits() {
         return arrayOfUnits;
     }
 

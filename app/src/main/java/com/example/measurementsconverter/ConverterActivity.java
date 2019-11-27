@@ -24,10 +24,10 @@ public class ConverterActivity extends AppCompatActivity {
 
     private void initFromSpinner(int positionOfDimension) {
         Spinner spinner = findViewById(R.id.from_spinner);
-        spinner.setAdapter(new FromSpinnerAdapter(positionOfDimension));
+        spinner.setAdapter(new FromSpinnerAdapter());
 //        spinner.setOnItemClickListener((parent, view, position, id) -> {
 //            Conversion selectedConversion = Conversion.values()[positionOfDimension];
-//            mFromSpinnerAdapter.set
+//            mFromSpinnerAdapter.setConversion(selectedConversion);
 //        });
     }
 }

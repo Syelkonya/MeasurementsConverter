@@ -6,13 +6,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class FromSpinnerAdapter extends BaseAdapter {
-
-    private Conversion mConversion;
-
-    public FromSpinnerAdapter(int positionOfDimension) {
-
-    }
 
     @Override
     public int getCount() {
@@ -38,9 +34,14 @@ public class FromSpinnerAdapter extends BaseAdapter {
             convertView.setTag(viewHolder);
         }
         ViewHolder holder = (ViewHolder) convertView.getTag();
-        int labelRes = getItem(position).getmLabelRes();
-        holder.mMeasures.setText(labelRes);
+        int unitLabelResources = getItem(position).getArrayOfUnits().get(position).getmLabelResources();
+        if (unitLabelResources != 0) {
+            holder.mMeasures.setText(unitLabelResources);
+        }
         return convertView;
+    }
+
+    public void setConversion(Conversion selectedConversion) {
     }
 
 
