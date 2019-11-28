@@ -11,14 +11,11 @@ public enum Unit {
     public double mConversionToBase;
     public double mConversionFromBase;
 
+
     Unit(int labelResources, double conversionToBase, double conversionFromBase){
         mLabelResources = labelResources;
         mConversionToBase = conversionToBase;
         mConversionFromBase = conversionFromBase;
     }
 
-
-    public int getmLabelResources() {
-        return mLabelResources;
-    }
 }

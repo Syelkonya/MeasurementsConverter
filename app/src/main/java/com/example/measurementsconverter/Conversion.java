@@ -19,20 +19,11 @@ public enum Conversion {
 
 
     public int mLabelRes;
-    private List<Unit> arrayOfUnits;
+    public List<Unit> arrayOfUnits;
 
 
     Conversion(int i, List<Unit> conversion) {
         mLabelRes = i;
         arrayOfUnits = conversion;
     }
-
-    public int getmLabelRes(){
-        return mLabelRes;
-    }
-
-    public List<Unit> getArrayOfUnits() {
-        return arrayOfUnits;
-    }
-
 }
