@@ -60,7 +60,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         public void onClick(View v) {
             int adapterPosition = getAdapterPosition();
             if (adapterPosition != RecyclerView.NO_POSITION) {
-                onDimensionListener.onDimensionClick(getAdapterPosition());
+                onDimensionListener.onDimensionClick(adapterPosition);
             }
         }
     }
