@@ -27,7 +27,8 @@
             android:id="@+id/input_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="TextView" />
+            tools:text="TextView"
+            android:inputType="numberDecimal"/>
 
         <TextView
             android:id="@+id/from"
@@ -67,7 +68,8 @@
             android:id="@+id/output_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="TextView" />
+            tools:text="TextView"
+            android:inputType="numberDecimal"/>
 
         <TextView
             android:id="@+id/to"

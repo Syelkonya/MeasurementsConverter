@@ -12,4 +12,7 @@
     <string name="sq_santimetres">Кв. сантиметр</string>
     <string name="from">Из</string>
     <string name="to">В</string>
+    <string name="spoon">Ложка</string>
+    <string name="teaspoon">Чайная ложка</string>
+    <string name="start_convert_value">1</string>
 </resources>

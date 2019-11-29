@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnDim
         Log.d("WorkOnClick", "Position-" + position);
 
         Intent intent = new Intent(this, ConverterActivity.class);
-        intent.putExtra("CLICKED_POSITION", position);
+        intent.putExtra("CLICKED_POSITION", Conversion.values()[position]);
         startActivity(intent);
     }
 }
