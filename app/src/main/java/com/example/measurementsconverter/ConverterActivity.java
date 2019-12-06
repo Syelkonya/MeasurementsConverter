@@ -1,6 +1,8 @@
 package com.example.measurementsconverter;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -37,24 +39,50 @@ public class ConverterActivity extends AppCompatActivity {
         mOutputValue = findViewById(R.id.output_number);
         Spinner fromSpinner = findViewById(R.id.from_spinner);
         Spinner toSpinner = findViewById(R.id.to_spinner);
+        final int[] LengthOfInputText = new int[1];
+        final int[] LengthOfOutputText = new int[1];
 
 
         mInputValue.setText(R.string.start_convert_value);
         mOutputValue.setText(R.string.start_convert_value);
-        mSelectedParameterFrom.setHint(getString(mConversion.arrayOfUnits.get(0).mLabelResources));
+
 
         final List<String> unitLabels = unitArrayToString(mConversion.arrayOfUnits);
         fromSpinner.setAdapter(new ArrayAdapter<>(this,
                 R.layout.support_simple_spinner_dropdown_item, unitLabels));
         toSpinner.setAdapter(new ArrayAdapter<>(this,
                 R.layout.support_simple_spinner_dropdown_item, unitLabels));
+        mUnitTo = mConversion.arrayOfUnits.get(0);
+        mUnitFrom = mConversion.arrayOfUnits.get(0);
+
+        mInputValue.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() > 0)
+                    convertTo();
+                LengthOfInputText[0] = s.length();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
 
         fromSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 mUnitFrom = mConversion.arrayOfUnits.get(position);
                 mSelectedParameterFrom.setHint(getString(mUnitFrom.mLabelResources));
-                convert();
+                if (LengthOfInputText[0] != 0){
+                    convertTo();
+                }
             }
 
             @Override
@@ -77,6 +105,7 @@ public class ConverterActivity extends AppCompatActivity {
         });
     }
 
+
     private List<String> unitArrayToString(List<Unit> unitArray) {
         List<String> unitArrayString = new ArrayList<>();
         for (Unit unit : unitArray)
@@ -85,10 +114,12 @@ public class ConverterActivity extends AppCompatActivity {
     }
 
 
-    private void convert() {
-            String inputValueString = mInputValue.getText().toString();
-            double input = Double.parseDouble(inputValueString);
-            double result = input * mUnitFrom.mConversionToBase * mUnitTo.mConversionFromBase;
-            mOutputValue.setText(result + "");
+    private void convertTo() {
+        String inputValueString = mInputValue.getText().toString();
+        double input = Double.parseDouble(inputValueString);
+        double result = input * mUnitFrom.mConversionToBase * mUnitTo.mConversionFromBase;
+        float resultF = (float) result;
+        mOutputValue.setText(resultF + "");
     }
+
 }
