@@ -96,6 +96,9 @@ public class ConverterActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 mUnitTo = mConversion.arrayOfUnits.get(position);
                 mSelectedParameterTo.setHint(getString(mUnitTo.mLabelResources));
+                if (LengthOfInputText[0] != 0){
+                    convertTo();
+                }
             }
 
             @Override
